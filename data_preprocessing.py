@@ -9,12 +9,9 @@ from nltk.tokenize import TweetTokenizer
 from tqdm import trange
 
 
-# DATA_PATH = 'data/'
-rusentilex_file = 'rusentilex_2017.txt'
-
-
 def build_sentiment_dict(target_dict, rusentilex_path):
-    # simplest form
+    """ Building word-sentiment dictionary, based on ReSentiLex 2017
+    """
     possible_sentiments = ['positive', 'negative', 'neutral']
     with open(rusentilex_path, 'r') as f:
         for line in f.readlines():
@@ -29,11 +26,13 @@ def build_sentiment_dict(target_dict, rusentilex_path):
 
 
 def build_dataset(file_path, sentiment_dict):
+    """ Building dataset from file in file_path
+    """
     root = et.parse(file_path).getroot()
     
     data = defaultdict(list)
     tables = root[-1]
-    for i in trange(len(tables), desc='Building dataset'):
+    for i in trange(len(tables), desc='Building dataset {}'.format(file_path)):
         useful_info = False
         
         for column in tables[i]:
@@ -54,6 +53,8 @@ def build_dataset(file_path, sentiment_dict):
 
 
 def preprocess_text(text, sentiment_dict):
+    """ Tweet text preprocessing
+    """
     tokens = tokenize(text)
     n_of_positive = 0
     n_of_negative = 0
@@ -74,12 +75,14 @@ def preprocess_text(text, sentiment_dict):
     return {'text': tokens, 'negative': n_of_negative, 'positive': n_of_positive}
 
 
-def tokenize(text):  
+def tokenize(text):
+    """ Tweet text tokenizing
+    """
     tokenizer = TweetTokenizer(preserve_case=False, reduce_len=True, strip_handles=True)
-    # Токенизация + убрать значки хештегов
+    
     tokens = tokenizer.tokenize(text)
     for i in range(len(tokens)):
         tokens[i] = re.sub('#+', '', tokens[i])
-    # лемматизация
+    
     tokens = [morph.parse(token)[0].normal_form for token in tokens if not token.startswith('http')]
     return tokens

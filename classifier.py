@@ -2,6 +2,8 @@ import pandas as pd
 
 
 def solving_rule(x):
+    """ Rule-based solving rule
+    """
     sentiment_sum = x.positive - x.negative
     if abs(sentiment_sum) > 0:
         sentiment_sum /= x.positive + x.negative
@@ -12,10 +14,10 @@ def solving_rule(x):
     return 0
 
 
-def classify(X, y):
+def classify(X):
+    """ Get class labels for X
+    """
     y_pred = []
     for index, x in X.iterrows():
         y_pred.append(solving_rule(x))
-    # print('F1_micro =', f1_score(y, y_pred, average='micro'))
-    # print('F1_macro =', f1_score(y, y_pred, average='macro'))
     return y_pred
