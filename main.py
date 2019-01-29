@@ -31,7 +31,7 @@ def main():
 
     X = datasets_banks_full.iloc[:, :-1]
     y = list(datasets_banks_full.iloc[:, -1])
-    y_pred = classify(X, y)
+    y_pred = classify(X)
 
     print('Banks')
     print('F1_micro =', f1_score(y, y_pred, average='micro'))
@@ -39,7 +39,7 @@ def main():
 
     X = datasets_tkk_full.iloc[:, :-1]
     y = list(datasets_tkk_full.iloc[:, -1])
-    y_pred = classify(X, y)
+    y_pred = classify(X)
 
     print('TKK')
     print('F1_micro =', f1_score(y, y_pred, average='micro'))
