@@ -1,6 +1,6 @@
 # [SentiRuEval2016](http://www.dialog-21.ru/evaluation/2016/sentiment/)
 
-
+[![Build Status](https://travis-ci.com/twelveth/SentiRuEval2016.svg?branch=master)](https://travis-ci.com/twelveth/SentiRuEval2016)
 
 Run with:
 
