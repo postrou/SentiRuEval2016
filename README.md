@@ -7,9 +7,7 @@ Run with:
 `python main.py <data path> <rusentilex file path>`
 
 ## Current results
-### Banks
-
-`banks_test_etalon.xml`:
+### Banks (`banks_test_etalon.xml`)
 
 Baseline:
 
@@ -21,9 +19,7 @@ My solution (rule-based):
 - F1_micro: 0.5807
 - F1_macro: 0.4507
 
-### TKK
-
-`tkk_test_etalon.xml`
+### TKK (`tkk_test_etalon.xml`)
 
 Baseline:
 
