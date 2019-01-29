@@ -44,6 +44,7 @@ def main():
     print('TKK')
     print('F1_micro =', f1_score(y, y_pred, average='micro'))
     print('F1_macro =', f1_score(y, y_pred, average='macro'))
+    
 
 if __name__ == '__main__':
     main()

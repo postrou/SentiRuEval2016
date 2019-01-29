@@ -4,9 +4,12 @@ import re
 
 import numpy as np
 import pandas as pd
-import pymorphy2; morph = pymorphy2.MorphAnalyzer()
+import pymorphy2
 from nltk.tokenize import TweetTokenizer
 from tqdm import trange
+
+
+morph = pymorphy2.MorphAnalyzer()
 
 
 def build_sentiment_dict(target_dict, rusentilex_path):
