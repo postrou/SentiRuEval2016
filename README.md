@@ -1,4 +1,4 @@
-# SentiRuEval2016
+# [SentiRuEval2016](http://www.dialog-21.ru/evaluation/2016/sentiment/)
 
 
 
