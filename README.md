@@ -4,10 +4,10 @@
 
 Run with:
 
-`python main.py <data path> <rusentilex file path>`
+`python main.py <data directory path> <rusentilex file path>`
 
 ## Current results
-### Banks (`banks_test_etalon.xml`)
+### Banks (concatenated etalon and train)
 
 Baseline:
 
@@ -16,10 +16,10 @@ Baseline:
 
 My solution (rule-based):
 
-- F1_micro: 0.5807
-- F1_macro: 0.4507
+- F1_micro: 0.7086898112140282
+- F1_macro: 0.5583019638228971 
 
-### TKK (`tkk_test_etalon.xml`)
+### TKK (concatenated etalon and train)
 
 Baseline:
 
@@ -28,5 +28,5 @@ Baseline:
 
 My solution (rule-based):
 
-- F1_micro: 0.4602
-- F1_macro: 0.4070
+- F1_micro: 0.5351786785500043
+- F1_macro: 0.45172437132273485
